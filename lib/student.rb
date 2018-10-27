@@ -43,7 +43,7 @@ class Student < InteractiveRecord
   
   def self.find_by(options)
     binding.pry
-      formatted_value = value.class == Fixnum ? value : "'#{value}'"
+      # formatted_value = value.class == Fixnum ? value : "'#{value}'"
       # binding.pry
       sql = "SELECT * FROM #{self.table_name} WHERE #{property} = #{formatted_value}"
       DB[:conn].execute(sql)
