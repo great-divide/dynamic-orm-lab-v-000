@@ -45,8 +45,8 @@ class Student < InteractiveRecord
     binding.pry
       # formatted_value = value.class == Fixnum ? value : "'#{value}'"
       # binding.pry
-      sql = "SELECT * FROM #{self.table_name} WHERE #{property} = #{formatted_value}"
+      sql = "SELECT * FROM #{self.table_name} WHERE #{options.keys.first} = #{options.values.first}"
       DB[:conn].execute(sql)
     end
-  end
+  
 end
